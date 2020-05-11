@@ -24,30 +24,36 @@
                 
 <?php
 $attributes = array('class' => 'form_user', 'id' => 'myform');
-echo form_open('Home/save_form_user', $attributes);
+echo form_open('User/save_form_user', $attributes);
 
 ?>
- 
   <div class="form-group">
-    <label for="inputAddress">id user</label>
-    <input type="text" name="id_user" class="form-control" id="inputAddress">
+    <label for="inputAddress" hidden="">id user</label>
+    <input type="hidden" name="id_user" class="form-control" id="inputAddress">
   </div>
   <div class="form-group">
     <label for="inputAddress">name</label>
-    <input type="text" name="name" class="form-control" id="inputAddress" >
+    <input type="text" name="name" class="form-control" id="inputAddress" required="">
   </div>
   <div class="form-group">
     <label for="inputAddress">Previledge</label>
-    <input type="text" name="previledge" class="form-control form_date" id="form_date" >
+    <input type="text" name="previledge" class="form-control form_date" id="form_date" required="" >
   </div>
   <div class="form-group">
     <label for="inputAddress2">username</label>
-    <input type="text" name="username" class="form-control" id="inputAddress2" >
+    <input type="text" name="username" class="form-control" id="inputAddress2"  required="" >
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Password</label>
-      <input type="text" name="password" class="form-control" id="inputCity">
+      <input type="text" name="password" class="form-control" id="inputCity"  required="">
+    </div>
+    
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Tgl lahir</label>
+    <input type="text" name="tgl_lahir" class="form-control form_date" id="form_date"  required="" >
     </div>
     
   </div>
@@ -58,11 +64,16 @@ echo form_open('Home/save_form_user', $attributes);
 echo form_close();
 
 ?>
+
                 </div>
               </div>             
             </div>
 
             <div class="col-lg-6">
+
+              <!-- pesam flashdata -->
+
+              <!-- pesam flashdata askhit -->
 
               <!-- Dropdown Card Example -->
               <div class="card shadow mb-4">
@@ -126,6 +137,15 @@ echo form_close();
                 </div>
               </div>
 
+            </div>
+
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <?= $this->session->flashdata('message'); ?>
+                </div>
+              </div>
             </div>
 
             
